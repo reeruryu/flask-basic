@@ -1,5 +1,5 @@
 # flask_basic
 
 1. login, logout
-2. bluesceen
+2. bluescreen
 3. mysql

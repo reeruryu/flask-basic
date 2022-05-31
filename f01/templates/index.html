@@ -1,0 +1,55 @@
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <script>
+      alert("{{messages[-1]}}")
+    </script>
+  {% endif %}
+{% endwith %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>로그인</title>
+</head>
+
+<body>
+    <div>
+      <header>
+        <div>
+          <div>
+            <a href="#">ㅇㅇ홈페이지</a>
+          </div>
+        </div>
+      </header>
+
+      <div>
+        <div>
+          <h4>
+            <b>로그인</b>
+          </h4>
+          <p>
+            {% if user_id != null %} 
+            {{ user_id }}님 환영합니다. &nbsp;
+            <a href="/ryureeru/logout" role="button">로그아웃</a>
+            {% else %}
+            <form action="/ryureeru/set_id" method="post">
+              <div>
+                <div>
+                  id : <input type="text" name="user_id"><br>
+                  pw : <input type="password" name="user_pw">
+                </div>
+                <div>
+                  <button type="submit">로그인</button>
+                  <button onclick="window.open('http://www.naver.com','네이버','width=600, height=400');return false">회원가입</button>
+                </div>
+              </div>
+            </form>
+            {% endif %}
+          </p>
+        </div>
+      </div>
+    </div>
+</body>
+</html>

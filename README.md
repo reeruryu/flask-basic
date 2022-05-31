@@ -6,7 +6,7 @@ f01
 
 f02
 - 회원가입 기능
-- 다른 창 생성
+- menu 생성
 - @login_required로 추가된 api 접근 허용
 - header에 menu 부분 코드 중복 제거
 

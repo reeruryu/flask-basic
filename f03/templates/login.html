@@ -1,0 +1,27 @@
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <script>
+      alert("{{messages[-1]}}")
+    </script>
+  {% endif %}
+{% endwith %}
+
+{% extends "layout.html" %}
+{% block title %}login page{% endblock %}
+{% block head %}
+    {{ super() }}
+{% endblock %}
+{% block content %}
+<form action="/ryureeru/set_id" method="post">
+    <div>
+      <div>
+        id : <input type="text" name="user_id"><br>
+        pw : <input type="password" name="user_pw">
+      </div>
+      <div>
+        <button type="submit">로그인</button>
+        <button onclick="window.open('/ryureeru/signup','회원가입','width=600, height=400');return false">회원가입</button>
+      </div>
+    </div>
+  </form>
+{% endblock %}

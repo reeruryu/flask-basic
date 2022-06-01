@@ -1,0 +1,28 @@
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <script>
+      alert("{{messages[-1]}}")
+      window.close()
+    </script>
+  {% endif %}
+{% endwith %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>sign up</title>
+  </head>
+  <body>
+    <h4>sign up</h4>
+    <form action="/ryureeru/test_signup" method="post">
+        <div>
+            id : <input type="text" name="user_id_tmp"><br>
+            pw : <input type="password" name="user_pw_tmp">
+        </div>      
+        <div>
+            <button type="submit">회원가입</button>
+        </div>
+    </form>
+  </body>
+</html>

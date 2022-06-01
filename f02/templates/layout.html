@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      {% block head %}
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{%block title%}{% endblock %} - index</title>
+    {% endblock %}
+  </head>
+  <body>
+    <header>
+      <div>
+        <a href="/index">ㅇㅇ홈페이지</a>
+      </div>
+    </header>
+
+    <div>
+        <ul>
+            <li><a href='/test'>test</a></li>
+            <li><a href='/mypage'>mypage</a></li>
+            {% if user_id != null %} 
+            {{ user_id }}님 환영합니다. &nbsp;
+            <li><a href="/ryureeru/logout" role="button">logout</a></li>
+            {% else %}
+            <li><a href='/ryureeru/test_login'>Login</a></li>
+            {% endif %}
+        </ul>
+    </div>
+    <center>
+        {% block content %}{% endblock %}
+    </center>
+  </body>
+</html>
